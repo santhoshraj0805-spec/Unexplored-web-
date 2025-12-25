@@ -29,6 +29,7 @@ header{
 .menu-btn{
   font-size:28px;
   cursor:pointer;
+  z-index:11; /* above overlay */
 }
 
 .sign-in-btn{
@@ -74,6 +75,8 @@ header{
   padding:80px 30px;
   transition:0.4s;
   z-index:10;
+  display:flex;
+  flex-direction:column;
 }
 
 .menu-panel a{
@@ -86,6 +89,27 @@ header{
 }
 
 .menu-panel a:hover{opacity:1;}
+
+/* Show menu when active */
+.menu-panel.active {
+  left:0;
+}
+
+/* Overlay behind menu when open */
+.menu-overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  display:none;
+  z-index:9;
+}
+
+.menu-overlay.active {
+  display:block;
+}
 
 /* Sign In Page */
 .signin-box{
@@ -176,4 +200,28 @@ header{
 @media(max-width:768px){
   .hero h1{font-size:36px;}
   .team-container{flex-direction:column;align-items:center;}
+
+  /* Make menu fixed for mobile */
+  .menu-panel {
+    top:0;
+    left:-260px;
+  }
+}
+
+/* Desktop view: show menu horizontally, hide hamburger */
+@media(min-width:769px){
+  .menu-btn {
+    display: none;
+  }
+  .menu-panel {
+    position:static;
+    height:auto;
+    width:auto;
+    background:transparent;
+    padding:0;
+    flex-direction:row;
+  }
+  .menu-panel a {
+    margin:0 15px;
+  }
 }
