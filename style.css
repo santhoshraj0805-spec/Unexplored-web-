@@ -1,0 +1,179 @@
+/* Reset */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+/* Body */
+body{
+  min-height:100vh;
+  background: radial-gradient(circle at bottom left,#0a3d62,#020814 60%);
+  color:white;
+  overflow-x:hidden;
+  position: relative;
+}
+
+/* Header */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  position:relative;
+  z-index:5;
+  background: rgba(0,0,0,0.3);
+}
+
+.menu-btn{
+  font-size:28px;
+  cursor:pointer;
+}
+
+.sign-in-btn{
+  padding:10px 25px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+  text-decoration:none;
+}
+
+/* Hero */
+.hero{
+  height:calc(100vh - 80px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{font-size:48px;letter-spacing:4px;}
+.hero p{margin-top:10px;opacity:0.7;}
+
+/* Stars effect */
+.stars{
+  position:absolute;
+  inset:0;
+  background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size:40px 40px;
+  opacity:0.4;
+  z-index:-1;
+}
+
+/* Menu Panel */
+.menu-panel{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100%;
+  background: rgba(10,15,30,0.95);
+  padding:80px 30px;
+  transition:0.4s;
+  z-index:10;
+}
+
+.menu-panel a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  margin-bottom:25px;
+  opacity:0.8;
+  font-size:18px;
+}
+
+.menu-panel a:hover{opacity:1;}
+
+/* Sign In Page */
+.signin-box{
+  width:340px;
+  background:#020814;
+  padding:30px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.15);
+  margin:100px auto;
+}
+
+.signin-box h2{text-align:center;margin-bottom:20px;}
+.signin-box input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:8px;
+  color:white;
+}
+.signin-box button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:#0a84ff;
+  color:white;
+  cursor:pointer;
+  margin-top:5px;
+}
+.signin-box .links{
+  display:flex;
+  justify-content:space-between;
+  margin-top:15px;
+  font-size:14px;
+}
+.signin-box .links a{
+  color:#0a84ff;
+  text-decoration:none;
+}
+
+/* Our Team placeholders */
+.team-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  margin:50px 20px;
+}
+.team-member{
+  width:220px;
+  height:250px;
+  background: rgba(255,255,255,0.05);
+  margin:15px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: rgba(255,255,255,0.5);
+  font-size:18px;
+}
+
+/* Your Space placeholder */
+.yourspace-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin:50px 20px;
+  font-size:18px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* About Us */
+.about-container{
+  margin:50px 20px;
+}
+.about-container h2{
+  margin-bottom:20px;
+}
+.contact-links a{
+  display:block;
+  margin-bottom:10px;
+  color:#0a84ff;
+  text-decoration:none;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{font-size:36px;}
+  .team-container{flex-direction:column;align-items:center;}
+}
