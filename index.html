@@ -5,13 +5,62 @@
 <title>The Unexplored</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Optional: Basic styling for menu panel */
+  .menu-panel {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #000;
+    display: none; /* hide initially */
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .menu-panel a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+  }
+
+  /* Show menu when active */
+  .menu-panel.active {
+    display: flex;
+  }
+
+  /* Style for the three-stripe menu button */
+  .menu-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  @media screen and (min-width: 768px) {
+    .menu-btn {
+      display: none; /* hide hamburger on desktop */
+    }
+
+    .menu-panel {
+      display: flex !important;
+      position: static;
+      flex-direction: row;
+      background: none;
+      padding: 0;
+    }
+
+    .menu-panel a {
+      margin: 0 10px;
+    }
+  }
+</style>
 </head>
 <body>
 
 <div class="stars"></div>
 
 <header>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="menu-btn" id="menu-btn">☰</div>
   <a href="signin.html" class="sign-in-btn">SIGN IN</a>
 </header>
 
@@ -27,6 +76,15 @@
   <a href="about.html">About Us</a>
 </div>
 
-<script src="script.js"></script>
+<script>
+  // Toggle menu on click
+  const menuBtn = document.getElementById('menu-btn');
+  const menuPanel = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menuPanel.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
